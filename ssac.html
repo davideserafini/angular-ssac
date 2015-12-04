@@ -1,0 +1,6 @@
+<div>
+    <input type="text" id="{{id}}" placeholder="{{placeholder}}" ng-model="searchTerm"/>
+    <ul>
+        <li ng-repeat="result in results" ng-click="selectItem($index)">{{result}}</li>
+    </ul>
+</div>
