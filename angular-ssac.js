@@ -14,12 +14,12 @@ angular.module('supersimpleautocomplete', [])
                 inputField.on("keyup", function() {
                     scope.results = [];
                     if (scope.searchTerm.trim().length > 0) {
-                        for (var sourceElem in scope.source) {
-                            if (scope.source[sourceElem].indexOf(scope.searchTerm) !== -1) {
-                                scope.results.push(scope.source[sourceElem]);
-                            }
-                        }
-                    }
+                        scope.source.forEach(function(sourceElem) {
+                            if (sourceElem.indexOf(scope.searchTerm) !== -1) {
+                                scope.results.push(sourceElem);
+                            };
+                        });
+                    };
                     scope.$apply();
                 });
 
